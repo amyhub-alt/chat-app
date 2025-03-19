@@ -45,6 +45,8 @@ const App = () => {
         console.error("Network status change error:", error);
       }
     };
+    //test
+    
 
     handleConnectivityChange();
   }, [connectionStatus.isConnected]);
