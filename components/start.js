@@ -37,7 +37,7 @@ const StartScreen = ({ navigation, auth }) =>{
     return (
         <View style={styles.container}>
             <ImageBackground source={BackgroundImage} style={styles.image}>
-                <Text style={styles.appTitle}>Chat App</Text>
+                <Text  style={styles.appTitle}>Chat App</Text>
                 <View style={styles.inputContainer}>
                     <View style={styles.inputView}>
                         <Image source={TextIcon} style={styles.inputIcon} />

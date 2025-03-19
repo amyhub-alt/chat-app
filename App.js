@@ -9,11 +9,8 @@ import { useNetInfo } from "@react-native-community/netinfo";
 const Stack = createNativeStackNavigator();
 
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, disableNetwork, enableNetwork } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
-
-
-
 
 
 const App = () => {
@@ -36,10 +33,13 @@ const App = () => {
     const handleConnectivityChange = async () => {
       try {
         if (connectionStatus.isConnected === false) {
+          console.log("cONNECTION lOST!")
           Alert.alert("Connection Lost!");
           await disableNetwork(db);
         } else if (connectionStatus.isConnected === true) {
+          console.log("cONNECTION IS BACK!")
           await enableNetwork(db);
+
         }
       } catch (error) {
         console.error("Network status change error:", error);
